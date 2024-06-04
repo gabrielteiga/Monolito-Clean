@@ -4,11 +4,10 @@ import com.grupo5.monolitoclean.domain.entities.AssinaturaModel;
 
 import java.util.List;
 
-public interface IAssinatura {
+public interface IAssinaturaRepository {
     AssinaturaModel registrarAssinatura(AssinaturaModel assinaturaModel);
     List<AssinaturaModel> listarAssinaturas();
-    List<AssinaturaModel> listarAssinaturasPorCliente(long codigoDoCliente);
-    List<AssinaturaModel> listarAssinaturasPorAplicativo(long codigoDoAplicativo);
-    List<AssinaturaModel> listarAssinaturasPorStatus(StatusAssinatura statusAssinatura);
+    List<AssinaturaModel> listarAssinaturasPorCodCliente(long codigoDoCliente);
+    List<AssinaturaModel> listarAssinaturasPorCodAplicativo(long codigoDoAplicativo);
     AssinaturaModel buscaAssinaturaPorCodigo(long codigoDaAssinatura);
 }

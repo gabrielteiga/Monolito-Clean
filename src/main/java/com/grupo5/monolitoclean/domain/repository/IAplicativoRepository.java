@@ -4,8 +4,8 @@ import com.grupo5.monolitoclean.domain.entities.AplicativoModel;
 
 import java.util.List;
 
-public interface IAplicativo {
+public interface IAplicativoRepository {
     AplicativoModel registrarAplicativo(AplicativoModel aplicativo);
     List<AplicativoModel> listarAplicativos();
-    AplicativoModel atualizarCustoMensal(AplicativoModel aplicativo);
+    AplicativoModel atualizarCustoMensal(long aplicativoId, float custoMensal);
 }

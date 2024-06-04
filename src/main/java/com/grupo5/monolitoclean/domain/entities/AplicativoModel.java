@@ -3,9 +3,9 @@ package com.grupo5.monolitoclean.domain.entities;
 public class AplicativoModel {
     private long codigo;
     private String nome;
-    private float custoMensal;
+    private double custoMensal;
 
-    public AplicativoModel(long codigo, String nome, float custoMensal) {
+    public AplicativoModel(long codigo, String nome, double custoMensal) {
         this.codigo = codigo;
         this.nome = nome;
         this.custoMensal = custoMensal;
@@ -27,7 +27,7 @@ public class AplicativoModel {
         this.nome = nome;
     }
 
-    public float getCustoMensal() {
+    public double getCustoMensal() {
         return custoMensal;
     }
 
