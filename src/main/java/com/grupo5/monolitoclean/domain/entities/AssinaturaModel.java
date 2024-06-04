@@ -1,5 +1,7 @@
 package com.grupo5.monolitoclean.domain.entities;
 
+import com.grupo5.monolitoclean.domain.repository.StatusAssinatura;
+
 import java.util.Date;
 
 public class AssinaturaModel {
@@ -15,6 +17,10 @@ public class AssinaturaModel {
         this.cliente = cliente;
         this.inicioVigencia = inicioVigencia;
         this.fimVigencia = fimVigencia;
+    }
+
+    public AssinaturaModel(){
+
     }
 
     public long getCodigo() {
@@ -55,6 +61,10 @@ public class AssinaturaModel {
 
     public void setFimVigencia(Date fimVigencia) {
         this.fimVigencia = fimVigencia;
+    }
+
+    public String getData(){
+        return getCodigo() + "," + getAplicativo() + "," + getCliente() + "," + getInicioVigencia() + "," + getFimVigencia() + "," + StatusAssinatura.ATIVA;
     }
 
 }
