@@ -13,6 +13,7 @@ public class ClienteService {
     }
 
     public List<ClienteModel> clientesCadastrados(){
-        return clienteRepository().listarClientes(); //NÃO ENTENDI O ERRO
+        return clienteRepository.listarClientes(); //NÃO ENTENDI O ERRO
+        //tinha um parênteses depois do clienteRepository
     }
 }

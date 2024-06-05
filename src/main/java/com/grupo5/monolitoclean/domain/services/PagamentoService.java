@@ -4,8 +4,6 @@ import com.grupo5.monolitoclean.domain.entities.PagamentoModel;
 import com.grupo5.monolitoclean.domain.repository.IPagamentoRepository;
 import com.grupo5.monolitoclean.application.dtos.PagamentoDTO;
 
-import java.util.List;
-
 public class PagamentoService {
     private IPagamentoRepository pagamentoRepository;
 
@@ -13,7 +11,7 @@ public class PagamentoService {
         this.pagamentoRepository = pagamentoRepository;
     }
 
-    public PagamentoModel registraPagamento(PagamentoModel PagamentoDTO) {
-        return pagamentoRepository.registrarPagamento(PagamentoModel PagamentoDTO);
+    public PagamentoModel registraPagamento(PagamentoModel pagamentoModel) {
+        return pagamentoRepository.registrarPagamento(pagamentoModel);
     }
 }

@@ -13,7 +13,8 @@ public class PagamentoMemRepository implements IPagamentoRepository {
         pagamentos = new ArrayList<PagamentoModel>();
     }
 
-    public void registrarPagamento(PagamentoModel pagamentoModel){
+    public PagamentoModel registrarPagamento(PagamentoModel pagamentoModel){
         pagamentos.add(pagamentoModel);
+        return pagamentoModel;
     }
 }

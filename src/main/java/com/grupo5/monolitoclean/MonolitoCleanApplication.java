@@ -9,5 +9,4 @@ public class MonolitoCleanApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MonolitoCleanApplication.class, args);
 	}
-
 }

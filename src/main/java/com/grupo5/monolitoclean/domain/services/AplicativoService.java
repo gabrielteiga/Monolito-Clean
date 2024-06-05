@@ -2,11 +2,13 @@ package com.grupo5.monolitoclean.domain.services;
 
 import com.grupo5.monolitoclean.domain.entities.AplicativoModel;
 import com.grupo5.monolitoclean.domain.repository.IAplicativoRepository;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
 public class AplicativoService {
     private IAplicativoRepository aplicativoRepository;
+
 
     public AplicativoService(IAplicativoRepository aplicativoRepository){
         this.aplicativoRepository = aplicativoRepository;

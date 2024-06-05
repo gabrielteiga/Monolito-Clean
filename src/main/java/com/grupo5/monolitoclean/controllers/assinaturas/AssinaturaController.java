@@ -2,6 +2,7 @@ package com.grupo5.monolitoclean.controllers.assinaturas;
 
 import com.grupo5.monolitoclean.application.dtos.AssinaturaDTO;
 import com.grupo5.monolitoclean.application.usecase.assinatura.*;
+import com.grupo5.monolitoclean.domain.entities.AssinaturaModel;
 import com.grupo5.monolitoclean.domain.repository.StatusAssinatura;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +33,8 @@ public class AssinaturaController {
     }
 
     @PostMapping("/assinaturas")
-    public AssinaturaDTO cadastraAssinatura(@RequestBody long codCliente, @RequestBody long codApp){
-        return cadastraAssinatura.run(codCliente, codApp);
+    public AssinaturaDTO cadastraAssinatura(@RequestBody AssinaturaModel assinaturaModel){
+        return cadastraAssinatura.run(assinaturaModel);
     }
 
     @GetMapping("/assinaturas/{tipo}")

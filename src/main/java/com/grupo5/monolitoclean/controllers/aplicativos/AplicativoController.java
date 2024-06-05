@@ -27,7 +27,7 @@ public class AplicativoController {
     }
 
     @PostMapping("/atualizacusto/{idAplicativo}")
-    public AplicativoDTO atualizaCusto(@PathVariable long idAplicativo, @RequestBody double custoMensal){
+    public AplicativoDTO atualizaCusto(@PathVariable long idAplicativo, @RequestBody float custoMensal){
         return atualizaCusto.run(idAplicativo, custoMensal);
     }
 }
