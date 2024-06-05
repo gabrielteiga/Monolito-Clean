@@ -56,5 +56,4 @@ public class AssinaturaMemRepository implements IAssinaturaRepository {
         }
         return null;
     }
-
 }

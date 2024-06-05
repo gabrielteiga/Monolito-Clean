@@ -3,6 +3,7 @@ package com.grupo5.monolitoclean.domain.services;
 import com.grupo5.monolitoclean.domain.entities.AssinaturaModel;
 import com.grupo5.monolitoclean.domain.repository.IAssinaturaRepository;
 import com.grupo5.monolitoclean.domain.repository.StatusAssinatura;
+import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class AssinaturaService {
     private IAssinaturaRepository assinaturaRepository;
 
@@ -54,25 +56,7 @@ public class AssinaturaService {
         return result;
     }
 
-//    public List<AssinaturaModel> listarAssinaturasPorStatusAtiva(StatusAssinatura statusAssinatura){
-//        LocalDate dataAtual = LocalDate.now();
-//        List<AssinaturaModel> assinaturasAux = assinaturaRepository.listarAssinaturas();
-//        for (AssinaturaModel assinaturaModelAtiva:assinaturasAux) {
-//            if (assinaturaModelAtiva.getFimVigencia().toInstant().isAfter(Instant.from(dataAtual))){
-//                assinaturasAux.add(assinaturaModelAtiva);
-//            }
-//        }
-//        return assinaturasAux;
-//    }
-//
-//    public List<AssinaturaModel> listarAssinaturasPorStatusCancelada(StatusAssinatura statusAssinatura){
-//        LocalDate dataAtual = LocalDate.now();
-//        List<AssinaturaModel> assinaturasAux = assinaturaRepository.listarAssinaturas();
-//        for (AssinaturaModel assinaturaModelAtiva:assinaturasAux) {
-//            if (assinaturaModelAtiva.getFimVigencia().toInstant().isBefore(Instant.from(dataAtual))){
-//                assinaturasAux.add(assinaturaModelAtiva);
-//            }
-//        }
-//        return assinaturasAux;
-//    }
+    public List<AssinaturaModel> listarAssinaturasPorCodAplicativo(long codigoDoAplicativo){
+        return assinaturaRepository.listarAssinaturasPorCodAplicativo(codigoDoAplicativo);
+    }
 }

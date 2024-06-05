@@ -4,14 +4,15 @@ import com.grupo5.monolitoclean.domain.entities.AplicativoModel;
 import com.grupo5.monolitoclean.domain.repository.IAplicativoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class AplicativoMemRepository implements IAplicativoRepository {
     private List<AplicativoModel> listaDeAplicativos;
 
-    public AplicativoMemRepository(List<AplicativoModel> listaDeAplicativos) {
-        this.listaDeAplicativos = listaDeAplicativos;
+    public AplicativoMemRepository() {
+        listaDeAplicativos = new ArrayList<>();
     }
 
     public AplicativoModel registrarAplicativo(AplicativoModel aplicativo){

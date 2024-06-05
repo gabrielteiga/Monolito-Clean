@@ -1,6 +1,7 @@
 package com.grupo5.monolitoclean.domain.repository;
 
 import com.grupo5.monolitoclean.domain.entities.AplicativoModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
