@@ -2,6 +2,7 @@ package com.grupo5.monolitoclean.application.usecase.pagamento;
 
 import com.grupo5.monolitoclean.application.dtos.PagamentoDTO;
 import com.grupo5.monolitoclean.domain.entities.PagamentoModel;
+import com.grupo5.monolitoclean.domain.services.PagamentoService;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,7 @@
 package com.grupo5.monolitoclean.application.usecase.cliente;
 
 import com.grupo5.monolitoclean.application.dtos.ClienteDTO;
+import com.grupo5.monolitoclean.domain.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
