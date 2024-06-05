@@ -13,6 +13,8 @@ public class ClienteMemRepository implements IClienteRepository {
 
     public ClienteMemRepository() {
         clientes = new ArrayList<>();
+        clientes.add(new ClienteModel(1, "João", "joao@hotmail.com"));
+        clientes.add(new ClienteModel(2, "Maria", "maria@hotmail.com"));
     }
 
     public ClienteModel registrarCliente(ClienteModel clienteModel){
