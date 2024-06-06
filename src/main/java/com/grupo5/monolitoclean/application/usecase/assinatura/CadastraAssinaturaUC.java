@@ -15,8 +15,8 @@ public class CadastraAssinaturaUC {
         this.cadastraAssinatura = assinaturaService;
     }
 
-    public AssinaturaDTO run(AssinaturaModel assinaturaModel){
-        AssinaturaModel assinatura = cadastraAssinatura.registraAssinatura(assinaturaModel);
+    public AssinaturaDTO run(long codcli, long codapp){
+        AssinaturaModel assinatura = cadastraAssinatura.registraAssinatura(codcli, codapp);
         return AssinaturaDTO.fromModel(assinatura);
     }
 }

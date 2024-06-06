@@ -32,8 +32,8 @@ public class AssinaturaService {
         return false;
     }
 
-    public AssinaturaModel registraAssinatura(AssinaturaModel assinaturaModel) {
-        return assinaturaRepository.registrarAssinatura(assinaturaModel);
+    public AssinaturaModel registraAssinatura(long codcli, long codapp) {
+        return assinaturaRepository.registrarAssinatura(codcli, codapp);
     }
 
 
@@ -43,8 +43,8 @@ public class AssinaturaService {
         List<AssinaturaModel> result = new ArrayList<>();
 
         for (AssinaturaModel assinaturaModel : assinaturasAux) {
-            boolean isAtiva = assinaturaModel.getFimVigencia().toInstant().isAfter(Instant.from(dataAtual));
-            boolean isCancelada = assinaturaModel.getFimVigencia().toInstant().isBefore(Instant.from(dataAtual));
+            boolean isAtiva = assinaturaModel.getFimVigencia().isAfter(dataAtual);
+            boolean isCancelada = assinaturaModel.getFimVigencia().isBefore(dataAtual);
 
             if (statusAssinatura == StatusAssinatura.ATIVA && isAtiva) {
                 result.add(assinaturaModel);

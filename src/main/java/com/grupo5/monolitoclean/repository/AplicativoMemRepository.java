@@ -13,6 +13,11 @@ public class AplicativoMemRepository implements IAplicativoRepository {
 
     public AplicativoMemRepository() {
         listaDeAplicativos = new ArrayList<>();
+        listaDeAplicativos.add(new AplicativoModel(111, "app1", 100));
+        listaDeAplicativos.add(new AplicativoModel(222, "app2", 200));
+        listaDeAplicativos.add(new AplicativoModel(333, "app3", 300));
+        listaDeAplicativos.add(new AplicativoModel(444, "app4", 400));
+        listaDeAplicativos.add(new AplicativoModel(555, "app5", 500));
     }
 
     public AplicativoModel registrarAplicativo(AplicativoModel aplicativo){

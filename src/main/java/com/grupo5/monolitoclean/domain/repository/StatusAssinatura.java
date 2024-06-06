@@ -20,14 +20,14 @@ public enum StatusAssinatura {
         return nome;
     }
 
-    public String setNome(AssinaturaModel assinaturaModel){
-        LocalDate dataAtual = LocalDate.now();
-        if (assinaturaModel.getFimVigencia().toInstant().isBefore(Instant.from(dataAtual))){
-            nome.equalsIgnoreCase("Ativa");
-        }else {
-            nome.equalsIgnoreCase("Cancelada");
-        }
-
-            return nome;
-    }
+//    public String setNome(AssinaturaModel assinaturaModel){
+//        LocalDate dataAtual = LocalDate.now();
+//        if (assinaturaModel.getFimVigencia().toInstant().isBefore(Instant.from(dataAtual))){
+//            nome.equalsIgnoreCase("Ativa");
+//        }else {
+//            nome.equalsIgnoreCase("Cancelada");
+//        }
+//
+//            return nome;
+//    }
 }

@@ -1,17 +1,21 @@
 package com.grupo5.monolitoclean.domain.entities;
 
 import com.grupo5.monolitoclean.domain.repository.StatusAssinatura;
+import org.springframework.cglib.core.Local;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class AssinaturaModel {
     private long codigo;
     private AplicativoModel aplicativo;
     private ClienteModel cliente;
-    private Date inicioVigencia;
-    private Date fimVigencia;
+    private LocalDate inicioVigencia;
+    private LocalDate fimVigencia;
 
-    public AssinaturaModel(long codigo, AplicativoModel aplicativo, ClienteModel cliente, Date inicioVigencia, Date fimVigencia) {
+
+    public AssinaturaModel(long codigo, AplicativoModel aplicativo, ClienteModel cliente, LocalDate inicioVigencia, LocalDate fimVigencia) {
         this.codigo = codigo;
         this.aplicativo = aplicativo;
         this.cliente = cliente;
@@ -21,6 +25,11 @@ public class AssinaturaModel {
 
     public AssinaturaModel(){
 
+    }
+    public AssinaturaModel(long codCliente, long codAplicativo){
+        codigo = codCliente + codAplicativo;
+        inicioVigencia = LocalDate.now();
+        fimVigencia = inicioVigencia.plusDays(37);
     }
 
     public long getCodigo() {
@@ -47,19 +56,19 @@ public class AssinaturaModel {
         this.cliente = cliente;
     }
 
-    public Date getInicioVigencia() {
+    public LocalDate getInicioVigencia() {
         return inicioVigencia;
     }
 
-    public void setInicioVigencia(Date inicioVigencia) {
+    public void setInicioVigencia(LocalDate inicioVigencia) {
         this.inicioVigencia = inicioVigencia;
     }
 
-    public Date getFimVigencia() {
+    public LocalDate getFimVigencia() {
         return fimVigencia;
     }
 
-    public void setFimVigencia(Date fimVigencia) {
+    public void setFimVigencia(LocalDate fimVigencia) {
         this.fimVigencia = fimVigencia;
     }
 

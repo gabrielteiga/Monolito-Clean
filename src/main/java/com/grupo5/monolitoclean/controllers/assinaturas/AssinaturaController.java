@@ -1,12 +1,15 @@
 package com.grupo5.monolitoclean.controllers.assinaturas;
 
 import com.grupo5.monolitoclean.application.dtos.AssinaturaDTO;
+import com.grupo5.monolitoclean.application.dtos.CodigosDTO;
 import com.grupo5.monolitoclean.application.usecase.assinatura.*;
 import com.grupo5.monolitoclean.domain.entities.AssinaturaModel;
 import com.grupo5.monolitoclean.domain.repository.StatusAssinatura;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -33,27 +36,27 @@ public class AssinaturaController {
     }
 
     @PostMapping("/assinaturas")
-    public AssinaturaDTO cadastraAssinatura(@RequestBody AssinaturaModel assinaturaModel){
-        return cadastraAssinatura.run(assinaturaModel);
+    public AssinaturaDTO cadastraAssinatura(@RequestBody CodigosDTO codigosDTO){
+        return cadastraAssinatura.run(codigosDTO.getCodcli(), codigosDTO.getCodapp());
     }
 
-    @GetMapping("/assinaturas/{tipo}")
+    @GetMapping("/assinaturas/{statusAssinatura}")
     public List<AssinaturaDTO> assinaturasPorStatus(@PathVariable StatusAssinatura statusAssinatura){
         return assinaturasPorStatus.run(statusAssinatura);
     }
 
     @GetMapping("/asscliente/{codcli}")
-    public List<AssinaturaDTO> listarAssinaturasDoCliente(@PathVariable long codCliente){
-        return listarAssinaturasDoCliente.run(codCliente);
+    public List<AssinaturaDTO> listarAssinaturasDoCliente(@PathVariable long codcli){
+        return listarAssinaturasDoCliente.run(codcli);
     }
 
     @GetMapping("/assapp/{codapp}")
-    public List<AssinaturaDTO> listarAssinaturasDoApp(@PathVariable long codApp){
-        return listarAssinaturasDoApp.run(codApp);
+    public List<AssinaturaDTO> listarAssinaturasDoApp(@PathVariable long codapp){
+        return listarAssinaturasDoApp.run(codapp);
     }
 
     @GetMapping("/assinvalida/{codass}")
-    public boolean verificaAssinatura(@PathVariable long codAssinatura){
-        return verificaAssinatura.run(codAssinatura);
+    public boolean verificaAssinatura(@PathVariable long codass){
+        return verificaAssinatura.run(codass);
     }
 }
