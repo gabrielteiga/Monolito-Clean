@@ -29,6 +29,16 @@ public class ClienteMemRepository implements IClienteRepository {
         clientes.add(clienteModel);
         return clienteModel;
     }
+
+    public ClienteModel buscarClientePorId(long codigoCli){
+        for(ClienteModel clienteModel : clientes){
+            if (clienteModel.getCodigo() == codigoCli){
+                return clienteModel;
+            }
+        }
+        return null;
+    }
+
     public List<ClienteModel> listarClientes(){
         return clientes;
     }
