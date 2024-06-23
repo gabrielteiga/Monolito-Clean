@@ -10,6 +10,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class AssinaturaService {
@@ -37,7 +39,18 @@ public class AssinaturaService {
     }
 
 
-    public List<AssinaturaModel> listarAssinaturasPorStatus(StatusAssinatura statusAssinatura) {
+    public List<AssinaturaModel> listarAssinaturasPorStatus(String statusAssinaturaString) {
+        String regex = "(?i)ativa";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(statusAssinaturaString);
+        StatusAssinatura statusAssinatura;
+
+        if (matcher.find()){
+            statusAssinatura = StatusAssinatura.ATIVA;
+        } else {
+            statusAssinatura = StatusAssinatura.CANCELADA;
+        }
+
         LocalDate dataAtual = LocalDate.now();
         List<AssinaturaModel> assinaturasAux = assinaturaRepository.listarAssinaturas();
         List<AssinaturaModel> result = new ArrayList<>();

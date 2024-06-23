@@ -1,25 +1,29 @@
 package com.grupo5.monolitoclean.domain.entities;
 
-import java.math.BigDecimal;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class PagamentoModel {
     private long codigo;
     private AssinaturaModel assinatura;
-    private BigDecimal valorPago;
-    private Date dataPagamento;
+    private double valorPago;
+    private LocalDateTime dataPagamento;
     private String promocao;
 
-    public long getCodigo() {
-        return codigo;
-    }
 
-    public PagamentoModel(long codigo, AssinaturaModel assinatura, BigDecimal valorPago, Date dataPagamento, String promocao) {
+    public PagamentoModel(long codigo, AssinaturaModel assinatura, double valorPago, LocalDateTime dataPagamento, String promocao) {
         this.codigo = codigo;
         this.assinatura = assinatura;
         this.valorPago = valorPago;
         this.dataPagamento = dataPagamento;
         this.promocao = promocao;
+    }
+
+    public long getCodigo() {
+        return codigo;
     }
 
     public void setCodigo(long codigo) {
@@ -34,19 +38,19 @@ public class PagamentoModel {
         this.assinatura = assinatura;
     }
 
-    public BigDecimal getValorPago() {
+    public double getValorPago() {
         return valorPago;
     }
 
-    public void setValorPago(BigDecimal valorPago) {
+    public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
 
-    public Date getDataPagamento() {
+    public LocalDateTime getDataPagamento() {
         return dataPagamento;
     }
 
-    public void setDataPagamento(Date dataPagamento) {
+    public void setDataPagamento(LocalDateTime dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
 

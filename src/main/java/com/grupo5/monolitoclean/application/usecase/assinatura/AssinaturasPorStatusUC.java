@@ -18,8 +18,8 @@ public class AssinaturasPorStatusUC {
         this.assinaturaService = assinaturaService;
     }
 
-    public List<AssinaturaDTO> run(StatusAssinatura statusAssinatura){
-        List<AssinaturaModel> listaDeAssinaturas = assinaturaService.listarAssinaturasPorStatus(statusAssinatura);
+    public List<AssinaturaDTO> run(String statusAssinaturaString){
+        List<AssinaturaModel> listaDeAssinaturas = assinaturaService.listarAssinaturasPorStatus(statusAssinaturaString);
         return listaDeAssinaturas.stream()
             .map(a->AssinaturaDTO.fromModel(a))
             .toList();

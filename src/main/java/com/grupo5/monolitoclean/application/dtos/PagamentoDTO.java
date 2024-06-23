@@ -3,11 +3,19 @@ package com.grupo5.monolitoclean.application.dtos;
 import com.grupo5.monolitoclean.domain.entities.PagamentoModel;
 
 public record PagamentoDTO(
-        String dataPagamento,
-        long codigoAssinatura,
+        int dia,
+        int mes,
+        int ano,
+        long codass,
         double valorPago
 ) {
     public static PagamentoDTO fromModel(PagamentoModel pagamento) {
-        return new PagamentoDTO(pagamento.getDataPagamento().toString(), pagamento.getAssinatura().getCodigo(), pagamento.getValorPago().doubleValue());
+        return new PagamentoDTO(
+                pagamento.getDataPagamento().getDayOfMonth(),
+                pagamento.getDataPagamento().getMonth().getValue(),
+                pagamento.getDataPagamento().getYear(),
+                pagamento.getAssinatura().getCodigo(),
+                pagamento.getValorPago()
+        );
     }
 }

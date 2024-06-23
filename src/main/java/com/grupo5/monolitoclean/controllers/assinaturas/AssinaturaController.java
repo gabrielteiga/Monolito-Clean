@@ -40,9 +40,9 @@ public class AssinaturaController {
         return cadastraAssinatura.run(codigosDTO.getCodcli(), codigosDTO.getCodapp());
     }
 
-    @GetMapping("/assinaturas/{statusAssinatura}")
-    public List<AssinaturaDTO> assinaturasPorStatus(@PathVariable StatusAssinatura statusAssinatura){
-        return assinaturasPorStatus.run(statusAssinatura);
+    @GetMapping("/assinaturas/{statusAssinaturaString}")
+    public List<AssinaturaDTO> assinaturasPorStatus(@PathVariable String statusAssinaturaString){
+        return assinaturasPorStatus.run(statusAssinaturaString);
     }
 
     @GetMapping("/asscli/{codcli}")

@@ -15,6 +15,10 @@ public class PagamentoMemRepository implements IPagamentoRepository {
         pagamentos = new ArrayList<>();
     }
 
+    public int quantidadeDePagamentosRegistrados(){
+        return this.pagamentos.size();
+    }
+
     public PagamentoModel registrarPagamento(PagamentoModel pagamentoModel){
         pagamentos.add(pagamentoModel);
         return pagamentoModel;
