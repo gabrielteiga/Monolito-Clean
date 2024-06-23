@@ -45,7 +45,7 @@ public class AssinaturaController {
         return assinaturasPorStatus.run(statusAssinatura);
     }
 
-    @GetMapping("/asscliente/{codcli}")
+    @GetMapping("/asscli/{codcli}")
     public List<AssinaturaDTO> listarAssinaturasDoCliente(@PathVariable long codcli){
         return listarAssinaturasDoCliente.run(codcli);
     }

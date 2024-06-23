@@ -15,7 +15,6 @@ public class ListarAssinaturasDoClienteUC {
     }
 
     public List<AssinaturaDTO> run(long codCliente){
-        System.out.println("UC");
         return assinaturaService.listarAssinaturasDoCliente(codCliente).stream()
             .map(a -> AssinaturaDTO.fromModel(a))
             .toList();

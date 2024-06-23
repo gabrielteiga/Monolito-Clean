@@ -23,15 +23,6 @@ public class AssinaturaModel {
         this.fimVigencia = fimVigencia;
     }
 
-    public AssinaturaModel(){
-
-    }
-    public AssinaturaModel(long codCliente, long codAplicativo){
-        codigo = codCliente + codAplicativo;
-        inicioVigencia = LocalDate.now();
-        fimVigencia = inicioVigencia.plusDays(37);
-    }
-
     public long getCodigo() {
         return codigo;
     }

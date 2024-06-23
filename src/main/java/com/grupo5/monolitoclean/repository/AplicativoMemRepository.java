@@ -28,6 +28,15 @@ public class AplicativoMemRepository implements IAplicativoRepository {
     public List<AplicativoModel> listarAplicativos(){
         return listaDeAplicativos;
     }
+    
+    public AplicativoModel buscarAplicativoPorId(long codapp){
+        for (AplicativoModel appModel:listaDeAplicativos) {
+            if (appModel.getCodigo() == codapp){
+                return appModel;
+            }
+        }
+        return null;
+    }
 
     public AplicativoModel atualizarCustoMensal(long aplicativoId, float custoMensal){
         for(AplicativoModel aplicativo : listaDeAplicativos){

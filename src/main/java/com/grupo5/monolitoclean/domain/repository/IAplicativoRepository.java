@@ -9,4 +9,5 @@ public interface IAplicativoRepository {
     AplicativoModel registrarAplicativo(AplicativoModel aplicativo);
     List<AplicativoModel> listarAplicativos();
     AplicativoModel atualizarCustoMensal(long aplicativoId, float custoMensal);
+    AplicativoModel buscarAplicativoPorId(long codapp);
 }
